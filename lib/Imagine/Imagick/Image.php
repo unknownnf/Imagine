@@ -76,7 +76,7 @@ final class Image implements ImageInterface
     public function copy()
     {
         try {
-            if (version_compare(phpversion("imagick"), "3.1.0b1", ">=")) {
+            if (strpos(phpversion(),'hiphop') !== false || version_compare(phpversion("imagick"), "3.1.0b1", ">=")) {
                 $clone = clone $this->imagick;
             } else {
                 $clone = $this->imagick->clone();
